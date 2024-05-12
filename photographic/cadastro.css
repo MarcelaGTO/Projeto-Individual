@@ -5,7 +5,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 850px;
+  height: 750px;
+}
+
+.bc_cadastro{
+  margin: auto;
 }
 
 .cadastro {
@@ -16,19 +20,19 @@
   }
   
   .cadastro .container {
-    margin: 50px;
+    margin: 25px;
     justify-content: center;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(82, 129, 239, 0.2));;
+    background: linear-gradient(to bottom,  rgba(255, 255, 255, 0.5), rgba(82, 129, 239, 0.2));;
     opacity: 1;
-    border-radius: 10px;
+    border-radius: 20px;
     flex-direction: row;
     display: flex;
-    height: 540px;
-    width: 500px;
+    height: 500px;
+    width: 3650x;
     background-repeat: no-repeat;
     background-size: cover;
-    border-top-right-radius: 60px;
-    border-bottom-left-radius: 60px;
+    border-top-right-radius: 70px;
+    border-bottom-left-radius: 70px;
   }
 
   .cadastro .card-cadastro {
@@ -38,7 +42,7 @@
     display: flex;
     height: 450px;
     width: 300px;
-    color: #36451e;
+    color: #1e2645;
 
 }
 
@@ -56,7 +60,7 @@
 .campo label {
     margin-bottom: 20px;
     font-weight: bold;
-    color: #36451e;
+    color: #1e2645;
 }
 
 .campo input {
@@ -89,10 +93,10 @@
   border-radius: 20px;         /* Cantos arredondados */
   border: none;                /* Remove a borda padrão */
   background-color: #1e90ff;   /* Cor de fundo azul */
-  height: 40px;                /* Altura do botão */
-  width: 250px;                /* Largura do botão */
+  height: 20px;                /* Altura do botão */
+  width: 150px;                /* Largura do botão */
   font-size: 20px;             /* Tamanho da fonte */
-  color: white;                /* Cor do texto */
+  color: rgb(70, 68, 68);                /* Cor do texto */
   cursor: pointer;             /* Muda o cursor para pointer ao passar sobre o botão */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
   transition: all 0.3s ease;   /* Transição suave para todos os efeitos */
@@ -169,7 +173,6 @@
     height: 20px;
   }
 
-  /* Adicionando uma borda diferente no card de cadastro */
 .cadastro .card-cadastro {
   margin-top: 40px;
   margin-left: 10px;
@@ -177,14 +180,12 @@
   display: flex;
   height: 450px;
   width: 300px;
-  color: #36451e;
+  color: #1e2645;
   border: 2px solid #82b3e0; /* Altera a cor da borda para azul claro */
   border-radius: 15px; /* Adiciona borda arredondada */
   padding: 5px; /* Adiciona espaçamento interno */
 }
 
-
-/* Sombreando os campos */
 .campo input {
   border: none;
   border-radius: 20px;
@@ -193,13 +194,12 @@
   box-sizing: border-box;
   margin-bottom: 10px;
   padding: 5px;
-  background-color: rgba(217, 217, 217, 0.3);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+  background-color: rgba(217, 217, 217, 0.463);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
-/* Alterando a cor da fonte para uma que combine */
 .campo label {
   margin-bottom: 20px;
   font-weight: bold;
-  color: #2c3e50; /* Altera a cor da fonte para um tom mais escuro que combine com o azul claro */
+  color: #1e2645; 
 }
