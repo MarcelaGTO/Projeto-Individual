@@ -151,6 +151,7 @@
 
 .sobre-mim {
   margin: 50px;
+  
 }
 
 .sobre-mim .container {
@@ -174,6 +175,10 @@
 .sobre-mim .texto-sobre-mim p {
   margin: 10px 0 10px 0;
   text-align: justify;
+}
+.sobre-mim-img{
+  display: flex;
+  justify-content: end;
 }
 
 .sobre-mim-img img {
