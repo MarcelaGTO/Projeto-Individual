@@ -1,0 +1,125 @@
+.bc_cadastro{
+    background-image: url(imagem/parque.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+.cadastro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .cadastro .container {
+    margin: 50px;
+    justify-content: center;
+    background: linear-gradient(to top, #5c5cc6, #1e90ff);
+    border-radius: 10px;
+    flex-direction: row;
+    display: flex;
+    height: 540px;
+    width: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .cadastro .card-cadastro {
+    margin-top: 50px;
+    margin-left: 10px;
+    flex-direction: column;
+    display: flex;
+    height: 450px;
+    width: 300px;
+    color: #36451e  ;
+}
+
+.cadastro .formulario {
+    width: 300px;
+    font-size: 20px;
+}
+
+.campo {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.campo label {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #36451e;
+}
+
+.campo input {
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    width: 250px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: rgba(217, 217, 217, 0.3);
+}
+
+.campo input::placeholder {
+    font-size: 14px;
+}
+
+.formulario button {
+    border-radius: 20px;
+    border: none;
+    background-color: #556B2F;
+    height: 40px;
+    width: 250px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+  }
+  
+  .navbar .agora{
+    color: #82b3e0;
+  }
+  
+  .navbar ul{
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar ul a{
+    color: white;
+    margin: 0 25px;
+    text-transform: uppercase;
+    font-size: 18px;
+    display: block;
+    align-items: center;
+  }
+  
+  .navbar ul a::after{
+    content: "";
+    background-color: #82b3e0;
+    height: 3px;
+    width: 0%;
+    display: block;
+    margin: 0 auto;
+    transition: 0.3s;
+  }
+  
+  .navbar ul a:hover::after{
+    width: 100%;
+  }
+  
+  .navbar ul a .icon{
+    color: white;
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+  }

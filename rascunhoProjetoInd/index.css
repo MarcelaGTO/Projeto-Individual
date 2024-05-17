@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: 'Nunito';
+}
+
+@font-face {
+  font-family: 'Lerum';
+  src: url(TextFonts.net_lerum-font/Lerum\ Stencil.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header {
+  background-position: center;
+  background-image: url(imagem/IMG_8303.jpg); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 850px;
+}
+
+.container{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1%;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.navbar .agora{
+  color: #82b3e0;
+}
+
+.navbar ul{
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul a{
+  color: white;
+  margin: 0 25px;
+  text-transform: uppercase;
+  font-size: 18px;
+  display: block;
+  align-items: center;
+}
+
+.navbar ul a::after{
+  content: "";
+  background-color: #82b3e0;
+  height: 3px;
+  width: 0%;
+  display: block;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+
+.navbar ul a:hover::after{
+  width: 100%;
+}
+
+.navbar ul a .icon{
+  color: white;
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+}
+
+.logo{
+  font-family: 'Lerum', sans-serif;
+  font-size: 39px;
+  color: #82b3e0;
+}
+
+.banner{
+  display: flex;
+  width: 900px;
+  padding: 0px;
+  align-items: flex-start;
+}
+
+.banner .Textobanner{
+  margin: 180px 90px 0 0;
+  padding: 0;
+  width: 600px;
+}
+
+.Textobanner h1{
+  font-size: 46px;
+  color: rgba(255, 255, 255, 0.818);
+}
+
+.Textobanner p {
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.818);
+  font-weight: lighter;
+  margin: 15px 0;
+}
+
+.inicio{
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  /* padding: 0; */
+  align-items: flex-start;
+}
+
+.inicio .container{
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  width: 100%;
+}
+
+.inicio .textoinicio {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.inicio .textoinicio h3 {
+  font-size: 46px;
+  color: #82b3e0;
+ 
+}
+
+/* .inicio .textoinicio p {
+  margin: 10px 0 10px 0;
+  text-align: justify;
+} */
+
+.inicio .inicioImg {
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 30%;
+  height: auto;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.sobre-mim {
+  margin: 50px;
+}
+
+.sobre-mim .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.sobre-mim .texto-sobre-mim {
+  width: 50%;
+  padding: 0 40px;
+  
+}
+
+.sobre-mim .texto-sobre-mim h3 {
+  font-size: 56px;
+  color: #82b3e0;
+}
+
+.sobre-mim .texto-sobre-mim p {
+  margin: 10px 0 10px 0;
+  text-align: justify;
+}
+
+.sobre-mim-img img {
+  border-radius: 50%;
+}
+
+footer{
+background: linear-gradient(to top, #000080, #1e90ff);
+color: white;
+padding: 30px 0;
+}
+
+.content{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0;
+}
+
+.section-footer{
+  padding: 20px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.section-footer h3{
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #fff;
+  text-transform: uppercase; 
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px; 
+}
+
+.section-footer p {
+  color: #ccc;
+  font-size: 16px;
+}
+
+.section-footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section-footer ul li {
+  margin-bottom: 5px;
+}
+
+.section-footer ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease; /*validar*/
+}
+
+.section-footer ul li a:hover {
+  color: #990000;
+}
+
+.bottom {
+  background-color: #1e3b45;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+

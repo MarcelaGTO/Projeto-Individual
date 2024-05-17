@@ -1,0 +1,37 @@
+.bc_login {
+    background-image: url(imagem/parque.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login .container {
+    margin: 50px;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    flex-direction: row;
+    display: flex;
+    height: 340px;
+    width: 500px;
+    background-image: url(imagens/bg\ login.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login .card-login {
+    margin-top: 50px;
+    margin-left: 10px;
+    flex-direction: column;
+    display: flex;
+    height: 450px;
+    width: 300px;
+    color: #36451e  ;
+}
