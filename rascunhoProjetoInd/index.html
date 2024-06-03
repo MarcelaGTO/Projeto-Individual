@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Home - P&C</title>
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <a href="index.html">
+          <p class="logo">P&C</p>
+        </a>
+        <ul class="ul">
+          <a href="index.html" class="agora">home</a>
+          <a href="#sobre" class="scroll-link">sobre mim</a>
+          <a href="lugares.html">lugares</a>
+          <a href="galeria.html">galeria</a>
+          <a href="cadastro.html"><img src="imagem/login-icon-3.jpg" alt="cadastro" class="icon"></a>
+        </ul>
+      </div>
+      <section class="banner">
+        <div class="Textobanner">
+          <h1>Photographic Connection</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi reprehenderit assumenda ut natus neque
+            enim ducimus. Accusamus, tenetur sapiente odio natus vel distinctio, expedita aliquam perferendis incidunt
+            officia, enim facilis?</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="inicio">
+    <div class="container">
+      <div class="textoinicio">
+        <h3>Bem-vindo ao Photographic Connection</h3>
+      </div>
+      <div class="inicioImg">
+        <img src="imagem/vistaSptech.jpg" alt="imagem inicio" height="35%" width="35%">
+        <img src="imagem/ipiranga.jpg" alt="ipiranga" height="35%" width="35%">
+        <img src="imagem/masp preto e branco.jpg" alt="masp" height="35%" width="35%">
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="sobre-mim">
+    <div class="container">
+      <div class="texto-sobre-mim">
+        <h3>Sobre mim</h3>
+        <p>
+
+          Olá me chamo Marcela. Meu interesse pela franquia The Last of Us começou em um momteno muito significativo da
+          minha vida, logo após a perda da minha vó. Foi um período muito complicado pois eu estava tentandobuscar por
+          formas de lidar com a dor da perda, quando encontrei conforto assistindo um vídeo do youtuber Alanzoka jogando
+          o primeiro jogo da série. Esse momento despertou muito interesse pelo mundo complexo e emocionante criado pela
+          franquia.
+          <br><br>
+          Desde então, o universo de The Last of Us se tornou parte da minha semana. Seja jogando os jogos, assistindo
+          vídeos ou conversando sobre com meus amigos que também gostam do tema, essa franquia se tornou uma fonte de
+          inspiração e entretenimentopara mim.
+          <br><br>
+          Escolhi esse tema porque encontrei nele uma maneira de lidar com a dor da perda, de uma forma que eu me
+          divertisse, explorando temas de sobrevivência, resiliência e esperança em um mundo devastado por problemas. Os
+          valres que vejo refletidos nesse desafio individual são a capacidade de superação, a bondade, a solidariedade
+          e principalmente a resiliência.
+          <br><br>
+          Minha maior dificuldade foi lidar com a perda da minha vó e encontrar uma maneira saudável de processar minhas
+          emoções. The Last of Us me proporcionou uma válvula de escape e uma forma de canalizar minhas emoções de uma
+          maneira construtiva.
+          <br><br>
+          Minha maior superação na realização desse desafio foi conseguir deixar o meu projeto do mesmo jeito que eu
+          planejei que ficasse e de uma forma que eu ficasse totalmente satisfeita com o resultaod final, para isso,
+          tive que pesquisar muito e aprender muito. Com esse projeto tive a certeza do quanto o tema me ajudou no meu
+          processo de cura e que tenho um ambiente incrivelmente confortáel para falar sobre minhas dificuldades.
+          <br><br>
+          Gostaria de expressar minha gratidão à minha família, e também ao youtuber Alanzoka
+          Gostaria de expressar minha gratidão ao Youtuber Alanzoka, cujos vídeos me apresentaram ao mundo de The Last
+          of Us e me inspiraram a explorar essa franquia de forma mais profunda. Sua paixão pelo jogo e sua habilidade
+          em transmitir emoção e envolvimento através de seus vídeos foram fundamentais para despertar meu interesse e
+          me impulsionar nessa jornada.
+        </p>
+      </div>
+      <div class="sobre-mim-img">
+        <img src="imagem/eu.JPG" alt="Imagem Sobre Mim" height=40% width=40%>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="content">
+      <div class="section-footer">
+        <h3>Sobre</h3>
+        <p>Um site dedicado para inpirar a arte mostrar a forma como eu vejo o mundo</p>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="#">Galeria</a></li>
+          <li><a href="#">Lugares</a></li>
+          <li><a href="index.html #sobre-mim">Sobre Mim</a></li>
+        </ul>
+      </div>
+      <div class="contato">
+        <h3>Contato</h3>
+        <p>(11) 99999-8888 <br> marcela.oliveira@sptech.school</p>
+      </div>
+    </div>
+    <div class="bottom">
+      &copy; 2024 Photographic Connection site | Desenvolvido por Marcela Oliveira
+    </div>
+  </footer>
+
+</body>
+
+</html>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const links = document.querySelectorAll('.scroll-link');
+    const sections = document.querySelectorAll('.hidden');
+
+    function showSection(id) {
+        const section = document.querySelector(id);
+        if (section) {
+            section.classList.add('visible');
+        }
+    }
+
+    links.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            const targetID = this.getAttribute('href');
+            showSection(targetID);
+            window.location.hash = targetID;
+        });
+    });
+});
+
+</script>
