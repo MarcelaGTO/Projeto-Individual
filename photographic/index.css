@@ -214,74 +214,73 @@
 
 /* SOBRE MIM */
 .sobre-mim {
-  margin: 50px;
-  
+  margin-top: 50px;
+  margin: 20px;
 }
 
 .sobre-mim .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  
+  justify-content: space-around;
 }
 
 .sobre-mim .texto-sobre-mim {
   width: 50%;
   padding: 0 40px;
-  
 }
 
 .sobre-mim .texto-sobre-mim h3 {
-  font-size: 56px;
+  font-size: 46px;
   color: #82b3e0;
+  text-align: end;
 }
 
 .sobre-mim .texto-sobre-mim p {
-  margin: 10px 0 10px 0;
+  margin: 10px 0 80px;
   text-align: justify;
 }
 .sobre-mim-img{
   display: flex;
-  justify-content: end;
+  justify-content: start;
 }
 
 .sobre-mim-img img {
-  border-radius: 50%;
+  border-radius: 30%;
+  height: 50x;
+  width: 350px;
+  margin: 10px 0 90px;
 }
 
 /* rodape */
-
 footer{
-background: linear-gradient(to top, #000080, #1e90ff);
+background: linear-gradient(to top, #04294a, rgba(41, 119, 192, 0.832),#6ba1d4);
 color: white;
 padding: 30px 0;
 }
 
 .content{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
-  margin: 0;
+  margin: 10px 10px ;
 }
 
+.content .contato{
+margin-right: 70px;
+}
+
+.content ul{
+margin-left: 70px;
+}
 .section-footer{
   padding: 20px;
   flex: 1;
   min-width: 200px;
 }
 
-.section-footer h3{
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #fff;
-  text-transform: uppercase; 
-  border-bottom: 2px solid #fff;
-  padding-bottom: 10px; 
-}
-
 .section-footer p {
   color: #ccc;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .section-footer ul {
@@ -304,7 +303,7 @@ padding: 30px 0;
 }
 
 .bottom {
-  background-color: #1e3b45;
+  background-color: rgba(13, 47, 79, 0.664);
   padding: 10px 0;
   text-align: center;
   font-size: 14px;
