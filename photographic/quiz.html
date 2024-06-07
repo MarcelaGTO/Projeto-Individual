@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Fotografia</title>
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz de Fotografia</h1>
+        <div id="quiz-container"></div>
+        <button id="submit-btn">Enviar</button>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
+
+<script>
+
+const quizData = [
+    {
+        question: "Qual é o componente básico de uma câmera fotográfica?",
+        options: ["Lente", "Flash", "Sensor", "Obturador"],
+        answer: "Sensor"
+    },
+    {
+        question: "Qual é a abertura máxima de uma lente 50mm f/1.8?",
+        options: ["f/1.8", "f/2.8", "f/3.5", "f/4.0"],
+        answer: "f/1.8"
+    },
+    {
+        question: "O que significa a sigla 'ISO'?",
+        options: ["International Standard Organization", "Integrated Sensitivity Operation", "Image Stability Optimization", "International Organization for Standardization"],
+        answer: "International Organization for Standardization"
+    },
+    {
+        question: "Qual é a função do diafragma em uma câmera fotográfica?",
+        options: ["Focar a imagem", "Controlar a exposição à luz", "Acionar o obturador", "Regular o zoom"],
+        answer: "Controlar a exposição à luz"
+    },
+    {
+        question: "O que é 'Exposição Fotográfica'?",
+        options: ["Um tipo de filtro de lente", "A técnica de foco manual", "O ajuste de cores da imagem", "A quantidade de luz que atinge o sensor da câmera"],
+        answer: "A quantidade de luz que atinge o sensor da câmera"
+    }
+];
+
+const quizContainer = document.getElementById("quiz-container");
+const submitButton = document.getElementById("submit-btn");
+
+function displayQuiz() {
+    let output = "";
+    quizData.forEach((question, index) => {
+        output += `
+            <div class="question">
+                <h3>${index + 1}. ${question.question}</h3>
+                <ul>
+                    ${question.options.map(option => `<li><input type="radio" name="question${index}" value="${option}">${option}</li>`).join("")}
+                </ul>
+            </div>
+        `;
+    });
+    quizContainer.innerHTML = output;
+}
+
+function checkAnswers() {
+    const answerContainers = quizContainer.querySelectorAll(".question");
+    let score = 0;
+    quizData.forEach((question, index) => {
+        const answerContainer = answerContainers[index];
+        const selectedOption = answerContainer.querySelector(`input[name="question${index}"]:checked`);
+        if (selectedOption) {
+            const userAnswer = selectedOption.value;
+            if (userAnswer === question.answer) {
+                score++;
+                answerContainer.style.color = "green";
+            } else {
+                answerContainer.style.color = "red";
+            }
+        }
+    });
+    alert(`Você acertou ${score} de ${quizData.length} perguntas!`);
+}
+
+displayQuiz();
+submitButton.addEventListener("click", checkAnswers);
+</script>
