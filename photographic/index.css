@@ -104,51 +104,115 @@
   font-size: 32px;
   color: rgba(255, 255, 255, 0.818);
   font-weight: lighter;
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
-.inicio{
-  margin: 50px;
+/* Informações */
+.dicas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  padding: 50px;
+  justify-content: flex-start;
+  margin: 0 0 0 0;
+}
+
+.dica {
+  text-align: center;
+  width: 100%; /* Ajustado para ocupar 100% da largura da coluna */
+  max-width: 350px; /* Limite máximo de largura */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column; /* Ajustado para colunas */
+  align-items: center; /* Centraliza os itens na coluna */
+  cursor: pointer;
+}
+
+.dica:hover {
+  transform: scale(1.05);
+}
+
+.dica img {
+  width: 100%;
+  max-width: 100px; /* Ajuste proporcional para a imagem */
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.dica h4 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.dica p {
+  text-align: justify;
+  margin: 10px 0; /* Adiciona margem para espaçamento */
+}
+
+/* Duas imagens */
+.inicio {
+  margin: 0;
   display: flex;
   flex-direction: column;
-  /* padding: 0; */
   align-items: flex-start;
 }
 
-.inicio .container{
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between; */
+.inicio .container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.inicioImg {
+  display: flex;
   width: 100%;
 }
 
-.inicio .textoinicio {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
+.img-container {
+  position: relative;
+  flex-grow: 1;
+  margin: 0;
 }
 
-.inicio .textoinicio h3 {
-  font-size: 46px;
-  color: #82b3e0;
- 
+.img-container img {
+  width: 110%;
+  height: 80%;
+  display: block;
 }
 
-/* .inicio .textoinicio p {
-  margin: 10px 0 10px 0;
-  text-align: justify;
-} */
-
-.inicio .inicioImg {
-  border-radius: 10px;
-  margin-bottom: 20px;
-  width: 30%;
-  height: auto;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
+.overlay {
+  position: absolute;
+  bottom: 340px;
+  left: 40px;
+  color: #fff; /* Adiciona cor branca */
 }
 
+.overlay h1 b {
+  margin-bottom: 20px; /* Adiciona um pequeno espaço entre o título e o botão */
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif; /* Fonte atraente */
+}
+
+.overlay button {
+  margin-top: 55px;
+  padding: 15px 22px;
+  font-size: 20px;
+  background-color: #FFF;
+  color: #000080;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+.overlay button:hover {
+  background-color: #ffffffc8;
+}
+
+/* SOBRE MIM */
 .sobre-mim {
   margin: 50px;
   
@@ -184,6 +248,8 @@
 .sobre-mim-img img {
   border-radius: 50%;
 }
+
+/* rodape */
 
 footer{
 background: linear-gradient(to top, #000080, #1e90ff);
@@ -248,6 +314,5 @@ padding: 30px 0;
 html {
   scroll-behavior: smooth;
 }
-
 
 

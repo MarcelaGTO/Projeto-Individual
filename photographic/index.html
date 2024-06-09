@@ -34,15 +34,52 @@
     </div>
   </div>
 
+  <section class="informacao">
+    <div class="dicas">
+      <div class="dica">
+        <img src="imagem/criativo.jpeg"alt="olhar">
+        <h4>Olhar Criativo</h4>
+        <p>Com prática e reflexão constante, é possível transformar a visão comum em uma expressão artística autêntica e pessoal, enriquecendo cada fotografia com profundidade e originalidade.</p>
+      </div>
+
+      <div class="dica">
+        <img src="imagem/drone 2.jpeg" alt="tecnologia">
+        <h4>Tecnologia</h4>
+        <p>As tecnologias e inovações na fotografia estão transformando a maneira como capturamos e compartilhamos imagens. Com o advento dos drones, os fotógrafos agora podem explorar perspectivas aéreas impressionantes, capturando ângulos antes inacessíveis.</p>
+      </div>
+    
+
+      <div class="dica">
+        <img src="imagem/🇧🇷.jpeg" alt="cultura">
+        <h4>Cultura</h4>
+        <p>Viagens focadas na fotografia oferecem uma oportunidade única para capturar a essência de diferentes culturas, paisagens e momentos fugazes que definem um lugar. Para maximizar o potencial fotográfico durante suas viagens, é essencial planejar com antecedência, pesquisando os destinos mais fotogênicos. </p>
+      </div>
+
+      <div class="dica">
+        <img src="imagem/conexao.jpeg" alt="conexao">
+        <h4>Conexão</h4>
+        <p> A conexão fotográfica vai além de simplesmente capturar imagens; é sobre criar uma ligação emocional entre o fotógrafo, o sujeito e o espectador. Essa conexão permite que a fotografia conte histórias profundas, revele emoções e compartilhe perspectivas únicas.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="inicio">
     <div class="container">
-      <div class="textoinicio">
-        <h3>Bem-vindo ao Photographic Connection</h3>
-      </div>
       <div class="inicioImg">
-        <img src="imagem/vistaSptech.jpg" alt="imagem inicio" height="35%" width="35%">
-        <img src="imagem/ipiranga.jpg" alt="ipiranga" height="35%" width="35%">
-        <img src="imagem/masp preto e branco.jpg" alt="masp" height="35%" width="35%">
+        <div class="img-container">
+          <img src="imagem/masp preto e branco.jpg" alt="masp">
+          <div class="overlay">
+            <h1><b>LUGARES QUE PASSEI</b></h1>
+            <button onclick="window.location.href='lugares.html';">EXPLORE</button>
+          </div>
+        </div>
+
+        <div class="img-container">
+          <img src="imagem/RJ.jpg" alt="Rio de janeiro">
+          <div class="overlay">
+            <h1><b>GALERIA DE FOTOS</b></h1>
+            <button onclick="window.location.href='galeria.html';">EXPLORE</button>
+        </div>
       </div>
     </div>
   </section>
@@ -53,9 +90,13 @@
         <h3>Sobre mim</h3>
         <p>
 
-Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dolorem corrupti neque, animi tempore inventore ab iure exercitationem cupiditate labore quas repudiandae? Aliquam, error! Repellat itaque recusandae pariatur vero minima! <br>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus non! Mollitia placeat ab, voluptates deserunt facilis hic accusamus provident blanditiis, repellendus nisi quis doloremque culpa numquam. Vero, eum. Tempore.
-   
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos dolorem corrupti neque, animi tempore
+          inventore ab iure exercitationem cupiditate labore quas repudiandae? Aliquam, error! Repellat itaque
+          recusandae pariatur vero minima! <br>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus non! Mollitia placeat ab,
+          voluptates deserunt facilis hic accusamus provident blanditiis, repellendus nisi quis doloremque culpa
+          numquam. Vero, eum. Tempore.
+
         </p>
       </div>
       <div class="sobre-mim-img">
@@ -97,20 +138,20 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, repellendus non!
     const sections = document.querySelectorAll('.hidden');
 
     function showSection(id) {
-        const section = document.querySelector(id);
-        if (section) {
-            section.classList.add('visible');
-        }
+      const section = document.querySelector(id);
+      if (section) {
+        section.classList.add('visible');
+      }
     }
 
     links.forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-            const targetID = this.getAttribute('href');
-            showSection(targetID);
-            window.location.hash = targetID;
-        });
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const targetID = this.getAttribute('href');
+        showSection(targetID);
+        window.location.hash = targetID;
+      });
     });
-});
+  });
 
 </script>
