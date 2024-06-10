@@ -245,10 +245,10 @@
 }
 
 .sobre-mim-img img {
-  border-radius: 30%;
-  height: 50x;
-  width: 350px;
-  margin: 10px 0 90px;
+  border-radius: 10px 10px;
+  height: 40x;
+  width: 320px;
+  margin: 10px 0 70px;
 }
 
 /* rodape */

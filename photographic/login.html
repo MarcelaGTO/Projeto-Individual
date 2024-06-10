@@ -1,49 +1,70 @@
 <!DOCTYPE html>
-<html lang="ptbr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
-    <title>Login - P&C</title>
+    <title>Cadastro - P&C</title>
 </head>
 
 <body class="bc_login">
     <center>
-        <div class="container">
-            <div class="navbar">
-                <a href="index.html">
-                    <p class="logo">P&C</p>
-                </a>
-                <ul class="ul">
-                    <a href="index.html" class="agora">home</a>
-                    <a href="lugares.html">lugares</a>
-                    <a href="galeria.html">galeria</a>
-                    <a href="login.html" class="agora">login</a>
-                </ul>
-            </div>
-    </div>
-
-    <div class="login">
-        <div class="container">
-            <div class="card-login">
-                <h2>Bom te ver de novo!!</h2>
-                <div class="formulario">
-                    <div class="campo">
-                        <label>E-mail</label><br>
-                        <input type="email" placeholder="Seu Email">
+        <div class="header">
+            <div class="container">
+                <div class="navbar">
+                    <a href="index.html">
+                        <p class="logo">P&C</p>
+                    </a>
+                    <ul class="ul">
+                        <a href="index.html" class="agora">home</a>
+                        <a href="#sobre" class="scroll-link">sobre mim</a>
+                        <a href="lugares.html">lugares</a>
+                        <a href="galeria.html">galeria</a>
+                        <a href="cadastro.html"><img src="imagem/user.png" alt="cadastro" class="icon"></a>
+                    </ul>
+                </div>
+                <div class="login">
+                    <div class="container">
+                        <div class="cadastro_card">
+                            <div class="container-cadastro">
+                                <h2>Não possui cadastro?</h2>
+                                <button><a href="cadastro.html">Cadastra-se</button></a>
+                            </div>
+                        </div>
+                        <div class="card-login">
+                            <h2>Bem vindo!</h2>
+                            <div class="formulario">
+                                <div class="campo">
+                                    <label>E-mail</label><br>
+                                    <input type="email" placeholder="Seu Email" id="email_input">
+                                </div>
+                                <div class="campo">
+                                    <label>Senha</label><br>
+                                    <input type="password" placeholder="Sua Senha" id="senha_input">
+                                </div>
+                                <button onclick="entrar()">Entrar</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="campo">
-                        <label>Senha</label><br>
-                        <input type="password" placeholder="Sua Senha">
-                    </div>
-                    <button>Entrar</button>
                 </div>
             </div>
+
         </div>
-    </div>
+        </div>
+
+
+
 
     </center>
+
+
+
+
+
+
+
+
 </body>
 
 </html>

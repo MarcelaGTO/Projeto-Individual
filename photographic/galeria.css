@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: 'Nunito';
+}
+
+@font-face {
+  font-family: 'Lerum';
+  src: url(TextFonts.net_lerum-font/Lerum\ Stencil.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header {
+  background-position: center;
+  background: linear-gradient(to bottom, rgba(140, 184, 245, 0.511), rgba(45, 67, 119, 0.527), rgba(20, 36, 74, 0.829));
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 1800px;
+}
+
+.container {
+  align-items: center;
+  height: 1800px;
+}
+
+.logo {
+  font-family: 'Lerum', sans-serif;
+  font-size: 39px;
+  color: #82b3e0;
+}
+
+.bc_cadastro {
+  margin: auto;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.navbar .agora {
+  color: #82b3e0;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul a {
+  color: white;
+  margin: 0 25px;
+  text-transform: uppercase;
+  font-size: 18px;
+  display: block;
+  align-items: center;
+}
+
+.navbar ul a::after {
+  content: "";
+  background-color: #82b3e0;
+  height: 3px;
+  width: 0%;
+  display: block;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+
+.navbar ul a:hover::after {
+  width: 100%;
+}
+
+.navbar ul a .icon {
+  color: white;
+  margin-right: 8px;
+  width: 30px;
+  height: 30px;
+}
+
+.lugares {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 50px;
+  justify-content: center;
+}
+
+.lugar {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+  width: 300px;
+  height: 200px;
+  position: relative;
+  flex: 1 1 200px;
+ /* transition: transform 0.8s; */
+}
+
+.front,
+.text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  color: red;
+  backface-visibility: hidden;
+}
+
+.front img {
+  max-height: 455px;
+  width: 380px;
+  
+}
+
+.text {
+  display: none;
+  height: 455px;
+  width: 380px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+.text p {
+  font-size: 18px;
+  color: #333;
+}
