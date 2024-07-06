@@ -1,189 +1,135 @@
-  
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: 'Nunito';
+}
+
+@font-face {
+  font-family: 'Lerum';
+  src: url(TextFonts.net_lerum-font/Lerum\ Stencil.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1%;
+}
+
+.logo {
+  font-family: 'Lerum', sans-serif;
+  font-size: 39px;
+  color: #82b3e0;
+}
+
 .header {
   background-position: center;
-  background-image: url(imagem/IMG_8303.jpg); 
+  background-image: url(imagem/IMG_8303.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 750px;
 }
 
-.bc_cadastro{
+.bc_cadastro {
   margin: auto;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.navbar .agora {
+  color: #82b3e0;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul a {
+  color: white;
+  margin: 0 25px;
+  text-transform: uppercase;
+  font-size: 18px;
+  display: block;
+  align-items: center;
+}
+
+.navbar ul a::after {
+  content: "";
+  background-color: #82b3e0;
+  height: 3px;
+  width: 0%;
+  display: block;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+
+.navbar ul a:hover::after {
+  width: 100%;
+}
+
+.navbar ul a .icon{
+  color: white;
+  margin-right: 8px;
+  width: 30px;
+  height: 30px;
+}
+
 .cadastro {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .cadastro .container {
-    margin: 25px;
-    justify-content: center;
-    background: linear-gradient(to bottom,  rgba(255, 255, 255, 0.5), rgba(82, 129, 239, 0.2));;
-    opacity: 1;
-    border-radius: 20px;
-    flex-direction: row;
-    display: flex;
-    height: 500px;
-    width: 3650x;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-top-right-radius: 70px;
-    border-bottom-left-radius: 70px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+}
 
-  .cadastro .card-cadastro {
-    margin-top: 50px;
-    margin-left: 10px;
-    flex-direction: column;
-    display: flex;
-    height: 450px;
-    width: 300px;
-    color: #1e2645;
+.login_card,
+.card-cadastro {
+  background: #83b4e2c9;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 400px;
+}
 
+.cadastro .container {
+  margin: 25px;
+  justify-content: center;
+  background: linear-gradient(to bottom, rgba(140, 184, 245, 0.511), rgba(45, 67, 119, 0.527), rgba(20, 36, 74, 0.829));
+  opacity: 1;
+  border-radius: 5px;
+  flex-direction: row;
+  display: flex;
+  height: 570px;
+  width: 750px;
 }
 
 .cadastro .formulario {
-    width: 300px;
-    font-size: 20px;
+  width: 300px;
+  font-size: 18px;
 }
-
-.campo {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.campo label {
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #1e2645;
-}
-
-.campo input {
-    border: none;
-    border-radius: 20px;
-    height: 40px;
-    width: 250px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    padding: 5px;
-    background-color: rgba(217, 217, 217, 0.3);
-}
-
-.campo input::placeholder {
-    font-size: 14px;
-}
-
-/* .formulario button {
-    border-radius: 20px;
-    border: none;
-    background-color: #1e90ff;
-    height: 40px;
-    width: 250px;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-} */
-
-.formulario button {
-  border-radius: 20px;         /* Cantos arredondados */
-  border: none;                /* Remove a borda padrão */
-  background-color: #1e90ff;   /* Cor de fundo azul */
-  height: 20px;                /* Altura do botão */
-  width: 150px;                /* Largura do botão */
-  font-size: 20px;             /* Tamanho da fonte */
-  color: rgb(70, 68, 68);                /* Cor do texto */
-  cursor: pointer;             /* Muda o cursor para pointer ao passar sobre o botão */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  transition: all 0.3s ease;   /* Transição suave para todos os efeitos */
-  outline: none;               /* Remove o contorno padrão ao focar */
-  font-family: 'Arial', sans-serif; /* Fonte do botão */
-  text-transform: uppercase;   /* Letras maiúsculas */
-  letter-spacing: 1px;         /* Espaçamento entre letras */
-}
-
-/* Efeito ao passar o mouse */
-.formulario button:hover {
-  background-color: #104e8b;   /* Cor de fundo mais escura */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
-  transform: scale(1.05);      /* Leve aumento de tamanho */
-}
-
-/* Efeito ao pressionar o botão */
-.formulario button:active {
-  background-color: #1c86ee;   /* Cor de fundo diferente ao clicar */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
-  transform: scale(1);         /* Volta ao tamanho original */
-}
-
-/* Efeito de foco ao usar o teclado */
-.formulario button:focus {
-  outline: 2px solid #87cefa;  /* Contorno azul claro */
-  outline-offset: 2px;         /* Espaçamento do contorno */
-}
-
-
-.navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 20px;
-  }
-  
-  .navbar .agora{
-    color: #82b3e0;
-  }
-  
-  .navbar ul{
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar ul a{
-    color: white;
-    margin: 0 25px;
-    text-transform: uppercase;
-    font-size: 18px;
-    display: block;
-    align-items: center;
-  }
-  
-  .navbar ul a::after{
-    content: "";
-    background-color: #82b3e0;
-    height: 3px;
-    width: 0%;
-    display: block;
-    margin: 0 auto;
-    transition: 0.3s;
-  }
-  
-  .navbar ul a:hover::after{
-    width: 100%;
-  }
-  
-  .navbar ul a .icon{
-    color: white;
-    margin-right: 8px;
-    width: 20px;
-    height: 20px;
-  }
 
 .cadastro .card-cadastro {
-  margin-top: 40px;
-  margin-left: 10px;
+  margin-top: 60px;
+  /* margin-left: 10px; */
   flex-direction: column;
   display: flex;
   height: 450px;
   width: 300px;
-  color: #1e2645;
-  border: 2px solid #82b3e0; /* Altera a cor da borda para azul claro */
-  border-radius: 15px; /* Adiciona borda arredondada */
-  padding: 5px; /* Adiciona espaçamento interno */
+  background-color: #103b70af;
+  color: #f4f4f4d1;
+  padding: 5px;
+  /* Adiciona espaçamento interno */
 }
 
 .campo input {
@@ -194,12 +140,95 @@
   box-sizing: border-box;
   margin-bottom: 10px;
   padding: 5px;
-  background-color: rgba(217, 217, 217, 0.463);
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); 
+  background-color: rgba(255, 255, 255, 0.711);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .campo label {
   margin-bottom: 20px;
-  font-weight: bold;
-  color: #1e2645; 
+  font-weight:lighter;
+  color: #cdd1e2;
+}
+
+.campo {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.campo input::placeholder {
+  font-size: 14px;
+}
+
+.formulario button {
+  margin-top: 10px;
+  border-radius: 20px;
+  background-color: #2f426b;
+  height: 25px;
+  width: 130px;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.formulario button:hover {
+  background-color: #2b6299f1;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.formulario button:active {
+  background-color: #1c86ee;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: scale(1);
+}
+
+.formulario button:focus {
+  outline: 2px solid #87cefa;
+  outline-offset: 2px;
+}
+
+.login_card {
+  margin-top: 60px;
+  flex-direction: column;
+  display: flex;
+  height: 450px;
+  width: 300px;
+  color: #fff;
+  text-align: center;
+}
+
+.container-login {
+  margin-top: 150px;
+}
+
+.container-login h2 {
+  margin-right: 10px;
+}
+
+.container-login button {
+  border-radius: 20px;
+  border: none;
+  background-color: #2f426b;
+  height: 40px;
+  width: 250px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.container-login a {
+  text-decoration: none;
+  color: white;
+}
+
+button:hover {
+  background-color: #001999;
 }

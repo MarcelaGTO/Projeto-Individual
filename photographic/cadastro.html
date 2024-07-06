@@ -7,51 +7,67 @@
     <link rel="stylesheet" href="cadastro.css">
     <title>Cadastro - P&C</title>
 </head>
+
 <body class="bc_cadastro">
     <center>
         <div class="header">
             <div class="container">
-              <div class="navbar">
-                <a href="index.html">
-                  <p class="logo">P&C</p>
-                </a>
-                <ul class="ul">
-                  <a href="index.html" class="agora">home</a>
-                  <a href="#sobre" class="scroll-link">sobre mim</a>
-                  <a href="lugares.html">lugares</a>
-                  <a href="galeria.html">galeria</a>
-                  <a href="cadastro.html"><img src="imagem/login-icon-3.jpg" alt="cadastro" class="icon"></a>
-                </ul>
-              </div>
-              <div class="cadastro">
-                <div class="container">
-                    <div class="card-cadastro">
-                        <h2>Cadastra-se!</h2>
-                        <div class="formulario">
-                            <div class="campo">
-                                <label>Nome</label><br>
-                                <input type="text" placeholder="Seu Nome">
+                <div class="navbar">
+                    <a href="index.html">
+                        <p class="logo">P&C</p>
+                    </a>
+                    <ul class="ul">
+                        <a href="index.html" class="agora">home</a>
+                        <a href="#sobre" class="scroll-link">sobre mim</a>
+                        <a href="lugares.html">lugares</a>
+                        <a href="galeria.html">galeria</a>
+                        <a href="cadastro.html"><img src="imagem/user.png" alt="cadastro" class="icon"></a>
+                    </ul>
+                </div>
+                <div class="cadastro">
+                    <div class="container">
+                        <div class="login_card">
+                            <div class="container-login">
+                                <h2>Já possui cadastro?</h2>
+                                <button><a href="login.html">Fazer Login</button></a>
                             </div>
-                            <div class="campo">
-                                <label>E-mail</label><br>
-                                <input type="email" placeholder="Seu Email">
+                        </div>
+                        <div class="card-cadastro">
+                            <h2>Cadastra-se!</h2>
+                            <div class="formulario">
+                                <div class="campo">
+                                    <label>Nome</label><br>
+                                    <input type="text" placeholder="Seu Nome" id="ipt_nome">
+                                </div>
+                                <div class="campo">
+                                    <label>E-mail</label><br>
+                                    <input type="email" placeholder="Seu Email" id="ipt_email">
+                                </div>
+                                <div class="campo">
+                                    <label>Senha</label><br>
+                                    <input type="password" placeholder="Sua Senha" id="ipt_senha">
+                                </div>
+                                <div class="campo">
+                                    <label>Confirmar Senha</label><br>
+                                    <input type="password" placeholder="Sua Senha" id="ipt_connfirma">
+                                </div>
+                                <button onclick="cadastrar()">Cadastrar</button>
+                                <!-- <div id="div_aguardar" class="loading-div">
+                                    <img src="web-data-viz/public/assets/circle-loading.gif" id="loading-gif" />
+
+                                    <div id="div_erros_login"></div>
+                                </div> -->
                             </div>
-                            <div class="campo">
-                                <label>Senha</label><br>
-                                <input type="password" placeholder="Sua Senha">
-                            </div>
-                            <button>Cadastrar</button>
                         </div>
                     </div>
                 </div>
-            </div>
-    
-            </div>
-          </div>
 
-        
-        
-        
+            </div>
+        </div>
+
+
+
+
     </center>
 
 
