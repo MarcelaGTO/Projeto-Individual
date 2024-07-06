@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: 'Nunito';
+}
+
+@font-face {
+  font-family: 'Lerum';
+  src: url(TextFonts.net_lerum-font/Lerum\ Stencil.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header {
+  background-position: center;
+  background-image: url(imagem/IMG_8303.jpg); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 850px;
+}
+
+.container{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1%;
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.navbar .agora{
+  color: #82b3e0;
+}
+
+.navbar ul{
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul a{
+  color: white;
+  margin: 0 25px;
+  text-transform: uppercase;
+  font-size: 18px;
+  display: block;
+  align-items: center;
+}
+
+.navbar ul a::after{
+  content: "";
+  background-color: #82b3e0;
+  height: 3px;
+  width: 0%;
+  display: block;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+
+.navbar ul a:hover::after{
+  width: 100%;
+}
+
+.navbar ul a .icon{
+  color: white;
+  margin-right: 8px;
+  width: 30px;
+  height: 30px;
+}
+
+.logo{
+  font-family: 'Lerum', sans-serif;
+  font-size: 39px;
+  color: #82b3e0;
+}
+
+.banner{
+  display: flex;
+  width: 900px;
+  padding: 0px;
+  align-items: flex-start;
+}
+
+.banner .Textobanner{
+  margin: 180px 90px 0 0;
+  padding: 0;
+  width: 600px;
+}
+
+.Textobanner h1{
+  font-size: 46px;
+  color: rgba(255, 255, 255, 0.818);
+}
+
+.Textobanner p {
+  font-size: 32px;
+  color: rgba(255, 255, 255, 0.818);
+  font-weight: lighter;
+  margin: 10px 0;
+}
+
+/* Informações */
+.dicas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  padding: 50px;
+  justify-content: flex-start;
+  margin: 0 0 0 0;
+}
+
+.dica {
+  text-align: center;
+  width: 100%; /* Ajustado para ocupar 100% da largura da coluna */
+  max-width: 350px; /* Limite máximo de largura */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column; /* Ajustado para colunas */
+  align-items: center; /* Centraliza os itens na coluna */
+  cursor: pointer;
+}
+
+.dica:hover {
+  transform: scale(1.05);
+}
+
+.dica img {
+  width: 100%;
+  max-width: 100px; 
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.dica h4 {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.dica p {
+  text-align: justify;
+  margin: 10px 0; 
+}
+
+/* Duas imagens */
+.inicio {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inicio .container {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.inicioImg {
+  display: flex;
+  width: 100%;
+}
+
+.img-container {
+  position: relative;
+  flex-grow: 1;
+  margin: 0;
+}
+
+.img-container img {
+  width: 110%;
+  height: 80%;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 340px;
+  left: 40px;
+  color: #fff; /* Adiciona cor branca */
+}
+
+.overlay h1 b {
+  margin-bottom: 20px; /* Adiciona um pequeno espaço entre o título e o botão */
+  font-size: 30px;
+  font-family: 'Times New Roman', Times, serif; 
+}
+
+.overlay button {
+  margin-top: 55px;
+  padding: 15px 22px;
+  font-size: 20px;
+  background-color: #FFF;
+  color: #000080;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+.overlay button:hover {
+  background-color: #ffffffc8;
+}
+
+/* SOBRE MIM */
+.sobre-mim {
+  margin-top: 50px;
+  margin: 20px;
+}
+
+.sobre-mim .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  }
+
+.sobre-mim .texto-sobre-mim {
+  width: 50%;
+  padding: 0 20px;
+}
+
+.sobre-mim .texto-sobre-mim h3 {
+  font-size: 46px;
+  color: #82b3e0;
+  text-align: end;
+}
+
+.sobre-mim .texto-sobre-mim p {
+  margin: 10px 0 70px;
+  text-align: justify;
+}
+.sobre-mim-img{
+  display: flex;
+  justify-content: start;
+}
+
+.sobre-mim-img img {
+  border-radius: 10px 10px;
+  height: 40x;
+  width: 310px;
+  margin: 10px 0 40px;
+}
+
+/* rodape */
+footer{
+  background: linear-gradient(to top, #04294a, rgba(41, 119, 192, 0.832),#6ba1d4);
+  color: white;
+  padding: 30px 0;
+  }
+  
+  .content{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px 10px ;
+  }
+  
+  .content .contato{
+  margin-right: 100px;
+  }
+  
+  .content ul{
+  margin-left: 100px;
+  margin-bottom: 10px;
+  }
+
+  .section-footer{
+    padding: 20px;
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .section-footer p {
+    color: #ccc;
+    font-size: 15px;
+  }
+  
+  .section-footer ul {
+    list-style: none;
+    padding: 0;
+    color: #ccc;
+  }
+  
+  .section-footer ul li {
+    margin-bottom: 5px;
+  }
+  
+  .section-footer ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease; /*validar*/
+  }
+  
+  .section-footer ul li a:hover {
+    color: #030f3f;
+  }
+
+  .section-footer ul li a {
+      color: inherit; /* Faz com que a cor do texto seja herdada */
+      text-decoration: none; /* Remove o sublinhado */
+    }
+  
+  .bottom {
+    background-color: rgba(13, 47, 79, 0.664);
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  

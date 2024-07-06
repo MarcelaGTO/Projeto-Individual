@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <script src="js/sessao.js"></script>
+    <title>Cadastro - P&C</title>
+</head>
+
+<body class="bc_cadastro">
+    <center>
+        <div class="header">
+            <div class="container">
+                <div class="navbar">
+                    <a href="index.html">
+                        <p class="logo">P&C</p>
+                    </a>
+                    <ul class="ul">
+                        <a href="index.html" class="agora">home</a>
+                        <a href="#sobre" class="scroll-link">sobre mim</a>
+                        <a href="lugares.html">lugares</a>
+                        <a href="galeria.html">galeria</a>
+                        <a href="cadastro.html"><img src="css/imagem/user.png" alt="cadastro" class="icon"></a>
+                    </ul>
+                </div>
+
+<div class="alerta_erro">
+    <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+    </div>
+</div>
+
+                <div class="cadastro">
+                    <div class="container">
+                        <div class="login_card">
+                            <div class="container-login">
+                                <h2>Já possui cadastro?</h2>
+                                <button><a href="login.html">Fazer Login</button></a>
+                            </div>
+                        </div>
+                        <div class="card-cadastro">
+                            <h2>Cadastra-se!</h2>
+                            <div class="formulario">
+                                <div class="campo">
+                                    <label>Nome</label><br>
+                                    <input type="text" placeholder="Seu Nome" id="nome_input">
+                                </div>
+                                <div class="campo">
+                                    <label>E-mail</label><br>
+                                    <input type="email" placeholder="Seu Email" id="email_input">
+                                </div>
+                                <div class="campo">
+                                    <label>Senha</label><br>
+                                    <input type="password" placeholder="Sua Senha" id="senha_input">
+                                </div>
+                                <div class="campo">
+                                    <label>Confirmar Senha</label><br>
+                                    <input type="password" placeholder="Sua Senha" id="confirmacao_senha_input">
+                                </div>
+                                <button onclick="cadastrar()">Cadastrar</button>
+                                <div id="div_aguardar" class="loading-div">
+                                    <img src="assets/aguarde.gif" id="loading-gif" />
+
+                                    <div id="div_erros_login"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </center>
+
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        aguardar();
+
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var arrobaVar = emailVar.indexOf('@');
+        var pontoVar = emailVar.indexOf('.');
+
+        if (
+            nomeVar.length <= 1
+        ) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML += `O nome tem de ter mais de 1 caractere.`;
+
+            finalizarAguardar();
+            return false;
+        } else if (
+            arrobaVar == 0 && pontoVar == 0
+        ) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = `O E-Mail tem de ter @ e ponto.`;
+
+            finalizarAguardar();
+            return false;
+        } else if (
+            senhaVar.length <= 6
+        ) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = `A senha tem de ter mais de 6 caracteres.`;
+
+            finalizarAguardar();
+            return false;
+        } else if (
+            confirmacaoSenhaVar != senhaVar
+        ) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML = `A confirmação de senha tem de ser igual a senha.`;
+
+            finalizarAguardar();
+            return false;
+        } else if (
+            nomeVar == "" ||
+            emailVar == "" ||
+            senhaVar == "" ||
+            confirmacaoSenhaVar == ""
+        ) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        } else {
+            setInterval(sumirMensagem, 5000);
+        }
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    cardErro.style.display = "block";
+
+                    mensagem_erro.innerHTML =
+                        "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                    setTimeout(() => {
+                        window.location = "login.html";
+                    }, "2000");
+
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+        return false;
+    }
+
+
+    function sumirMensagem() {
+        cardErro.style.display = "none";
+    }
+</script>

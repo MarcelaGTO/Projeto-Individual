@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/quiz.css">
+    <title>Quiz - P&C</title>
+</head>
+
+<body class="bcQuiz">
+    
+    <button id="btnDashboard" class="btn_voltar" onclick="voltarParaDashboard()">Voltar para Dashboard</button>
+    
+    <div id="box_quiz" class="quiz">
+        <div id="quiz_inicio" class="quiz">
+            <div id="iniciar_quiz">
+                <div id="titulo">Quiz de fotografia</div>
+                <button id="btnInicio" class="btn_iniciar" onclick="iniciar()">Pronto</button>
+                <div class="pontos" id="div_pontos"></div>
+                <button id="registrarnota" onclick="cadastrarNota()">Ir para a dashboard</button>
+            </div>
+            <div id="game" style="display: none;">
+                <div id="div_pergunta" class="pergunta"></div>
+                <div id="respostas">
+                    <div class="btn" id="resposta1" onclick="check(0)"></div>
+                    <div class="btn" id="resposta2" onclick="check(1)"></div>
+                    <div class="btn" id="resposta3" onclick="check(2)"></div>
+                    <div class="btn" id="resposta4" onclick="check(3)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fim Quiz -->
+</body>
+
+</html>
+
+<script>
+    var perguntas_quiz = [
+        {
+            pergunta: "Qual destas técnicas pode ajudar a melhorar a memória fotográfica?",
+            alternativas: ["Escuta ativa", "Dormir com um livro na cabeça", "Visualização", "Sono controlado"],
+            resposta: 2
+        },
+        {
+            pergunta: "Qual é o tipo de fotografia que se concentra em capturar a vida cotidiana nas ruas, geralmente sem a permissão ou conhecimento dos assuntos fotografados",
+            alternativas: ["Fotografia de rua", "Fotografia documental", "Fotografia de estúdio", "Fotografia de viagem"],
+            resposta: 0
+        },
+        {
+            pergunta: "Qual é o termo técnico que descreve a área dentro de uma foto que está em foco?",
+            alternativas: ["Abertura", "Exposição", "Nitidez", "Profundidade de campo"],
+            resposta: 3
+        },
+        {
+            pergunta: "Quem é amplamente considerado como o inventor da primeira câmera fotográfica?",
+            alternativas: ["Thomas Edison", "Louis Daguerrez", "Leonardo da Vinci", "George Eastman"],
+            resposta: 1
+        },
+        {
+            pergunta: "Qual é o nome da técnica de fotografar objetos ou pessoas de muito perto, revelando detalhes que normalmente não são visíveis a olho nu?",
+            alternativas: ["Microfotografia", "Superfotografia", "Ampliação fotográfica", "Macrofotografia"],
+            resposta: 3
+        },
+        {
+            pergunta: "Qual destas lentes é usada principalmente para capturar uma ampla área de cena em uma única foto?",
+            alternativas: ["Telefoto", "Macro", "Grande angular", "Olho de peixe"],
+            resposta: 2
+        }
+    ];
+
+    var pergunta_atual = 0;
+    var pontos = 0;
+
+    function quiz1() {
+        div_quiz1.style.display = "none";
+        div_quiz2.style.display = "none";
+        div_quiz3.style.display = "none";
+        box_quiz.style.display = "flex";
+    }
+
+    function iniciar() {
+
+        iniciar_quiz.style.display = "none";
+        game.style.display = "flex";
+
+        div_pergunta.innerHTML = `${perguntas_quiz[pergunta_atual].pergunta}`;
+        resposta1.innerHTML = `${perguntas_quiz[pergunta_atual].alternativas[0]}`;
+        resposta2.innerHTML = `${perguntas_quiz[pergunta_atual].alternativas[1]}`;
+        resposta3.innerHTML = `${perguntas_quiz[pergunta_atual].alternativas[2]}`;
+        resposta4.innerHTML = `${perguntas_quiz[pergunta_atual].alternativas[3]}`;
+    }
+
+    function check(selected) {
+
+        var correta = perguntas_quiz[pergunta_atual].resposta;
+        var selectedElement = document.getElementById(`resposta${ selected + 1}`);
+    var corretaElement = document.getElementById(`resposta${ correta + 1}`);
+
+    if (selected === correta) {
+        selectedElement.classList.add('correto');
+        pontos++;
+    } else {
+        selectedElement.classList.add('errado');
+        corretaElement.classList.add('correto');
+    }
+
+    setTimeout(() => {
+        pergunta_atual++;
+
+        if (pergunta_atual < perguntas_quiz.length) {
+            selectedElement.classList.remove('correto');
+            selectedElement.classList.remove('errado');
+            corretaElement.classList.remove('correto');
+            iniciar();
+        } else {
+            pergunta_atual = 0;
+
+            iniciar_quiz.style.display = "flex";
+            game.style.display = "none";
+            titulo.style.display = "none";
+            btnInicio.style.display = "none";
+
+
+            if (pontos > (perguntas_quiz.length / 2)) {
+                div_pontos.innerHTML = `PARABÉNS! VOCÊ ACERTOU ${ pontos } de ${ perguntas_quiz.length }`;
+            } else {
+                div_pontos.innerHTML = `VOCÊ ACERTOU APENAS ${ pontos } de ${ perguntas_quiz.length }, TENTE NOVAMENTE!`;
+            }
+            selectedElement.classList.remove('correto');
+            selectedElement.classList.remove('errado');
+            corretaElement.classList.remove('correto');
+        }
+    }, 400)
+   
+    }
+
+    iniciar();
+
+
+
+    function cadastrarNota() {
+        // Enviando o valor da nova input
+        var id = sessionStorage.ID_USUARIO;
+
+        fetch("/pontuacao/cadastrarNota", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                NotaServer: pontos,
+                UsuarioServer: id
+            }),
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro na solicitação: ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Nota cadastrada com sucesso:', data);
+            })
+            .catch(error => {
+                console.error('Erro ao cadastrar a nota:', error);
+            });
+
+        setTimeout(() => {
+            window.location = "dashboard.html";
+        }, "3000");
+    }
+</script>

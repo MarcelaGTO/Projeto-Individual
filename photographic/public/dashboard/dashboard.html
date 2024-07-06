@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/sessao.js"></script>
+    <script src="../js/alerta.js"></script>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body onload="obterDadosGrafico(), GraficoAcertoGeral()">
+    <div class="sidebar">
+        <div class="logo">
+            Sua Dashboard
+        </div>
+        <a href="#home">Home</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="#users" onclick="limparSessao()">Sair</a>
+    </div>
+
+    <div class="main-content">
+        <div class="div_graficos">
+            <div class="graf1">
+                <canvas id="Grafico1"></canvas>
+            </div>
+            <div class="graf2">
+                <canvas id="Grafico2" style="height: 400px;"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let proximaAtualizacao;
+
+    var fkUsuario = sessionStorage.ID_USUARIO;
+    console.log(`${fkUsuario}`);
+
+    function obterDadosGrafico() {
+        fetch(`/medidas/ultimas/${fkUsuario}`, { cache: 'no-store' })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                var ctx = document.getElementById('Grafico1').getContext('2d');
+                var nota = data.map(item => item.acertos);
+                var labels = data.map((_, index) => `Tentativa ${index + 1}`);
+
+                var chartData = {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Acertos',
+                        data: nota,
+                        backgroundColor: '#2d361d',
+                        borderColor: '#2d361d',
+                        borderWidth: 1
+                    }]
+                };
+
+                var config = {
+                    type: 'line',
+                    data: chartData,
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 10
+                            }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Seus Acertos',
+                                font: {
+                                    size: 16
+                                },
+                                color: '#000000'
+                            },
+                            annotation: {
+                                annotations: {
+                                    line1: {
+                                        type: 'line',
+                                        yMin: 5,
+                                        yMax: 5,
+                                        borderColor: 'black',
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+
+                new Chart(ctx, config);
+            })
+            .catch(error => console.error('Falha na captura de acertos', error));
+    }
+
+
+    function GraficoAcertoGeral() {
+        fetch(`/medidas/GraficoAcertoGeral/`, { cache: 'no-store' })
+            .then(response => response.json())
+            .then(data => {
+                var labels = data.map(item => item.NomeUsuario);
+                var acertos = data.map(item => item.AcertosTotal);
+                var ctx3 = document.getElementById('Grafico2').getContext('2d');
+
+                var chartData = {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: 'Acertos',
+                            data: acertos,
+                            backgroundColor: ['#556B2F', '#990000', '#651717', '#36451e', '#2d361d', '#811313'],
+                            borderColor: ['#556B2F', '#990000', '#651717', '#36451e', '#2d361d', '#811313'],
+                            borderWidth: 1
+                        }
+                    ]
+                };
+
+                var config = {
+                    type: 'pie',
+                    data: chartData,
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 10
+                            }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Últimos Acertos dos Usuários',
+                                font: {
+                                    size: 16
+                                },
+                                color: '#000000'
+                            },
+                            annotation: {
+                                annotations: {
+                                    line1: {
+                                        type: 'line',
+                                        yMin: 5,
+                                        yMax: 5,
+                                        borderColor: 'black',
+                                    }
+                                }
+                            }
+                        }
+                    }
+                };
+
+                new Chart(ctx3, config);
+                console.log(data);
+            })
+            .catch(error => console.error('Falha na captura de acertos(media)', error));
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        obterDadosGrafico();
+    })
+
+
+</script>

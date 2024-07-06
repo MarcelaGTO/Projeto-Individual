@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ptbr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="css/imagens/tlou-logo.ico">
+    <title>TLOU | Galeria</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg_galeria">
+    <div class="container">
+        <div class="navbar">
+            <a href="index.html">
+                <p class="logo">TLOU</p>
+            </a>
+            <ul class="ul-galeria">
+                <a href="index.html">Home</a>
+                <a href="historia.html">História</a>
+                <a href="personagens.html">Personagens</a>
+                <a href="galeria.html" style="color: #990000;">Galeria</a>
+                <a href="cadastro.html">Cadastro</a>
+            </ul>
+        </div>
+    </div>
+
+    <section class="galeria">
+        <div class="container">
+            <h3>Galeria de Imagens de The Last of Us</h3>
+            <div class="galeria-container">
+                <div class="galeria-item" onclick="abrirModal('css/imagens/img 1 galeria.jpg')">
+                    <img src="css/imagens/img 1 galeria.jpg" alt="Imagem 1">
+                    <div class="imagem-overlay">
+                        <h4>Imagem Ellie - The Last of Us Part II</h4>
+                    </div>
+                </div>
+                <div class="galeria-item" onclick="abrirModal('css/imagens/img 2 galeria.webp')">
+                    <img src="css/imagens/img 2 galeria.webp" alt="Imagem 2">
+                    <div class="imagem-overlay">
+                        <h4>Imagem Ellie e Joel - The Last of Us Part I</h4>
+                    </div>
+                </div>
+                <div class="galeria-item" onclick="abrirModal('css/imagens/img 3 galeria.webp')">
+                    <img src="css/imagens/img 3 galeria.webp" alt="Imagem 3">
+                    <div class="imagem-overlay">
+                        <h4>Imagem Ellie e Riley- The Last of Us: Left Behind</h4>
+                    </div>
+                </div>
+                <div class="galeria-item" onclick="abrirModal('css/imagens/img 4 galeria.png')">
+                    <img src="css/imagens/img 4 galeria.png" alt="Imagem 4">
+                    <div class="imagem-overlay">
+                        <h4>Imagem Abby - The Last of Us Part II</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="galeria-container">
+                <div class="galeria-item" onclick="abrirModal('css/imagens/img 5 galeria.webp')">
+                    <img src="css/imagens/img 5 galeria.webp" alt="Imagem 5">
+                    <div class="imagem-overlay">
+                        <h4>Imagem Ellie - The Last of Us Part I</h4>
+                    </div>
+                </div>
+                <div class="galeria-item" onclick="abrirModal('css/imagens/img 6 galeria.jpg')">
+                    <img src="css/imagens/img 6 galeria.jpg" alt="Imagem 6">
+                    <div class="imagem-overlay">
+                        <h4>Imagem Henry e Sam - The Last of Us Part I</h4>
+                    </div>
+                </div>
+                <div class="galeria-item" onclick="abrirModal('css/imagens/img 7 galeria.jpg')">
+                    <img src="css/imagens/img 7 galeria.jpg" alt="Imagem 7">
+                    <div class="imagem-overlay">
+                        <h4>Imagem Ellie e Joel- The Last of Us Série HBO</h4>
+                    </div>
+                </div>
+                <div class="galeria-item" onclick="abrirModal('css/imagens/img 8 galeria.webp')">
+                    <img src="css/imagens/img 8 galeria.webp" alt="Imagem 8">
+                    <div class="imagem-overlay">
+                        <h4>Imagem Joel - The Last of Us Part I</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- validar modal -->
+        <div id="modal" class="modal">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+            <img class="modal-conteudo" id="imagem-ampliada">
+          </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section sobre">
+                <h3>Sobre</h3>
+                <p>Um site dedicado a celebrar a incrível franquia de jogos The Last of Us.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#">Biografia</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Galeria</a></li>
+                    <li><a href="sobremim.html">Sobre Mim</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contato">
+                <h3>Contato</h3>
+                <p>Telefone: 11 99999-8888</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 The Last of Us Site | Desenvolvido por Anne Caroline
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+
+function abrirModal(imagemSrc) {
+  var modal = document.getElementById("modal");
+  var imagemAmpliada = document.getElementById("imagem-ampliada");
+  imagemAmpliada.src = imagemSrc;
+  modal.style.display = "block";
+}
+
+function fecharModal() {
+  var modal = document.getElementById("modal");
+  modal.style.display = "none";
+}
+
+</script>
